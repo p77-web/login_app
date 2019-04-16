@@ -1,0 +1,131 @@
+#messages {
+  font-size: 16px;
+  margin: 0 auto;
+  margin-top: 15px;
+  opacity: 1;
+  text-align: center;
+  width: 90%;
+
+  -webkit-animation: messageDisapear 1s 3s; /* Safari 4+ */
+  -moz-animation:    messageDisapear 1s 3s; /* Fx 5+ */
+  -o-animation:      messageDisapear 1s 3s; /* Opera 12+ */
+  animation:         messageDisapear 1s 3s; /* IE 10+, Fx 29+ */
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes messageDisapear {
+0%   { opacity: 1; /*-webkit-transform: translateY(0%);*/}
+100% { opacity: 0; /*-webkit-transform: translateY(-100%);*/}
+}
+@-moz-keyframes messageDisapear {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-o-keyframes messageDisapear {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes messageDisapear {
+  0%   { opacity: 1; }
+  100% { opacity: 0;}
+}
+
+/* from flash */
+.info {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  border-radius: 15px;
+  color: #3c763d;
+  font-size: 16px;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 5px 0;
+  text-align: center;
+  width: 90%;
+}
+
+/* from flash */
+.error {
+  color: #e94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  border-radius: 15px;
+  font-size: 16px;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 5px 0;
+  margin-top: 15px;
+  text-align: center;
+  width: 90%;
+}
+
+/* from errors */
+.alert {
+  border-radius: 15px;
+  font-size: 16px;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 5px 0;
+  margin-top: 5px;
+  text-align: center;
+  width: 90%;
+}
+
+.alert-warning {
+    color: #2d2b26;
+    background-color: #f1d7d6;
+    border: none;
+}
+
+.alert > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.alert-dismissible .close {
+  padding: 0.2rem 0.5rem;
+}
+
+@media (min-width: 576px) {
+  #messages {
+    width: 50%;
+  }
+
+  .alert {
+    width: 50%;
+  }
+
+  .alert-dismissible .close {
+    padding: 0.2rem 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #messages {
+    width: 40%;
+  }
+
+  .alert {
+    width: 40%;
+  }
+}
+
+@media (min-width: 992px) {
+  #messages {
+    width: 30%;
+  }
+
+  .alert {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #messages {
+    width: 25%;
+  }
+
+  .alert {
+    width: 25%;
+  }
+}

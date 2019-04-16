@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include partials/head.ejs %>
+  </head>
+  <body>
+    <% include partials/navbar.ejs %>
+
+    <% let date = new Date(); %>
+    <% let year = date.getFullYear(); %>
+
+    <div class="container mt-3 mb-2">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1>Add a Books</h1>
+        </div>
+      </div>
+    </div>
+
+    <% if(errors) { %>
+      <div class="error">
+        <% for (let error in errors) { %>
+            <p><%= errors[error].msg %></p>
+        <% } %>
+      </div>
+    <% } %>
+
+    <div class="container mt-5 mb-3">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+          <form class="p-3 border border-success rounded" method="POST" action="/books/add">
+            <div class="form-group">
+              <label for="inputBook">Title</label>
+              <input type="text" class="form-control" name="title" id="inputBook" aria-describedby="book" placeholder="Enter title" value="<%= typeof bookTitle != 'undefined' ? bookTitle : '' %>">
+            </div>
+            <div class="form-group">
+              <label for="inputAuthor">Author</label>
+              <input type="text" class="form-control" name="author" id="inputAuthor" aria-describedby="author" placeholder="Enter author" value="<%= typeof author != 'undefined' ? author : '' %>">
+            </div>
+            <div class="form-group">
+              <label for="inputYear">Year</label>
+              <input type="number" class="form-control" name="year" id="inputYear" aria-describedby="year" placeholder="Enter year" min="1000" max="<%= year %>" value="<%= typeof bookYear != 'undefined' ? bookYear : '' %>">
+            </div>
+            <input type="submit" class="btn btn-outline-primary" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <% include partials/footer.ejs %>
+    <% include partials/scripts.ejs %>
+  </body>
+</html>
